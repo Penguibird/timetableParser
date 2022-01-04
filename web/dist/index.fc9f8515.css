@@ -1,0 +1,108 @@
+main {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main h1 {
+  margin: 2rem;
+  margin-top: 4rem;
+}
+main p {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+main p a {
+  display: block;
+  font-size: 0.9em;
+}
+
+em {
+  font-size: 0.9em;
+  color: #525252;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+form label {
+  grid-column: 1/span 1;
+}
+form label em {
+  display: block;
+}
+form input[type=text],
+form input[type=number] {
+  height: 2.2rem;
+  margin-bottom: 2rem;
+}
+form input[type=submit] {
+  width: fit-content;
+  place-self: center;
+  margin: 0.5rem;
+}
+@media (min-width: 40rem) {
+  form {
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+  form input[type=submit],
+form summary {
+    grid-column: span 2;
+  }
+  form label {
+    place-self: center end;
+    text-align: end;
+  }
+  form input[type=text],
+form input[type=number] {
+    margin-bottom: 0rem;
+  }
+}
+
+form details {
+  display: contents;
+}
+form details summary {
+  text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+  width: max-content;
+  margin: 0.5rem auto;
+}
+body > footer a {
+  display: inline;
+}
+
+#downloadAnchorParent {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#downloadAnchorParent > * + * {
+  margin-top: 1em;
+}
+#downloadAnchorParent em {
+  text-align: center;
+}
+#downloadAnchorParent .btn-primary {
+  font-size: 1.4rem;
+}
+#downloadAnchorParent .small {
+  font-size: 0.7em;
+}
+/*# sourceMappingURL=index.fc9f8515.css.map */
