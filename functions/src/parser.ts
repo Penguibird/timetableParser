@@ -11,7 +11,7 @@ function daysInMonth(month: number, year: number) {
 
 // Function to generate request URL
 function composeUrl(sid: string | null, tcode: string | null, week: string) {
-    return "https://timetable.dundee.ac.uk:8085/reporting/textspreadsheet?objectclass=student+set&idtype=id&identifier=" + sid + "/" + tcode + "&t=SWSCUST+student+set+individual&days=1-7&weeks=" + week + "&periods=1-28&template=SWSCUST+student+set+textspreadsheet"
+    return "https://timetable.dundee.ac.uk:8084/reporting/textspreadsheet?objectclass=student+set&idtype=id&identifier=" + sid + "/" + tcode + "&t=SWSCUST+student+set+individual&days=1-7&weeks=" + week + "&periods=1-28&template=SWSCUST+student+set+textspreadsheet"
 }
 
 // Get user info
@@ -27,6 +27,7 @@ export async function generateCalendar(studentId: string, timetableCode: string,
 
     for (let i = Number(startWeek); i <= Number(endWeek); i++) {
         let url = composeUrl(studentId, timetableCode, i.toString())
+        console.log(url)
         let response = await axios.get(url, { timeout: 10000 })
         let $ = cheerio.load(response.data)
 
